@@ -1,0 +1,211 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Header Styles */
+header {
+    background-color: #1e1e1e;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header .logo h1 {
+    color: #00bcd4;
+    margin: 0;
+}
+
+header .logo p {
+    font-size: 14px;
+    color: #b0bec5;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* Hero Section Styles */
+.hero {
+    background-color: #1e1e1e;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 36px;
+    color: #00bcd4;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #b0bec5;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    padding: 12px 20px;
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.hero .btn:hover {
+    background-color: #008c99;
+}
+
+/* Services Section Styles */
+.services {
+    padding: 40px 0;
+    background-color: #121212;
+}
+
+.services h2 {
+    text-align: center;
+    color: #00bcd4;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.service-list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 30%;
+}
+
+.service h3 {
+    color: #00bcd4;
+    margin-bottom: 15px;
+}
+
+.service p {
+    color: #b0bec5;
+    font-size: 16px;
+}
+
+/* Call-to-Action Section Styles */
+.cta {
+    background-color: #00bcd4;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.cta h2 {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta .btn {
+    padding: 12px 20px;
+    background-color: #008c99;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.cta .btn:hover {
+    background-color: #007786;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1e1e1e;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    color: #b0bec5;
+    font-size: 14px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+}
+
+td {
+    background-color: #121212;
+    border-bottom: 1px solid #444;
+}
+
+button.btn {
+    padding: 8px 15px;
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+button.btn:hover {
+    background-color: #008c99;
+}

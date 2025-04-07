@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Services - LablourLink</title>
+    <link rel="stylesheet" href="searchStyles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>LablourLink</h1>
+                <p>Connecting you with trusted service providers</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="search.html">Search Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="search-section">
+        <div class="container">
+            <h2>Find Your Service</h2>
+            <form id="search-form" class="search-form">
+                <label for="category">Select Service Category:</label>
+                <select name="category" id="category">
+                    <option value="moving">Moving</option>
+                    <option value="trades">Trades</option>
+                    <option value="lawncare">Lawn Care</option>
+                    <option value="cleaning">Cleaning</option>
+                    <option value="plumbing">Plumbing</option>
+                </select>
+                <button type="button" class="btn" onclick="searchServices()">Search</button>
+            </form>
+
+<h2>Results</h2>
+
+
+            <div id="results" class="results-section">
+                <!-- Dynamic results will appear here -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 LablourLink - All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="Search.js"></script>
+</body>
+
+</html>
