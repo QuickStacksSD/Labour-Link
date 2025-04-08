@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Service | Labour-Link</title>
+  <link rel="stylesheet" href="Signup.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Describe Your Service Request</h1>
+      <p class="subtitle">Let us know what you need, and we’ll handle the rest!</p>
+    </div>
+  </header>
+
+  <section class="signup-form">
+    <div class="container">
+      <form id="quoteForm">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="jobType">Type of Job</label>
+        <select id="jobType" name="jobType" required>
+          <option value="lawn_mowing">Lawn Mowing</option>
+          <option value="plumbing">Plumbing</option>
+          <option value="moving">Moving</option>
+          <option value="cleaning">Cleaning</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="budget">Expected Budget (CAD)</label>
+        <input type="number" id="budget" name="budget" placeholder="Example: 150" required />
+
+        <label for="description">Describe the Work You Need</label>
+        <textarea id="description" name="description" rows="6" placeholder="Explain what needs to be done"
+          required></textarea>
+
+        <button id="submit" type="submit">Submit Request</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 QuickStacks Software & Web Development</p>
+      <p><a href="mailto:charlie@quickstacks.dev">charlie@quickstacks.dev</a></p>
+    </div>
+  </footer>
+
+  <script type="module" src="Signup.js"></script>
+</body>
+
+</html>
