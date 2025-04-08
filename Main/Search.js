@@ -1,80 +1,94 @@
-// Define sample service data for each category
 const services = {
-    moving: [
-        { name: "Fast Movers", description: "Quick and reliable moving services" },
-        { name: "MoveIt Pro", description: "Professional moving company with great rates" }
-    ],
-    trades: [
-        { name: "Pro Plumbers", description: "Experienced plumbers for all your needs" },
-        { name: "Electric Solutions", description: "Electricians offering fast and safe repairs" }
-    ],
-    lawncare: [
-        { name: "Green Lawn Co.", description: "Expert lawn care and landscaping services" },
-        { name: "Lawn Masters", description: "Providing premium lawn maintenance and design" }
-    ],
-    cleaning: [
-        { name: "Clean Sweepers", description: "High-quality residential and commercial cleaning" },
-        { name: "Sparkle Cleaners", description: "Offering deep cleaning services for homes and offices" }
-    ],
-    plumbing: [
-        { name: "Pipe Masters", description: "Plumbing experts for repairs and installation" },
-        { name: "Leak Fixers", description: "Fast and affordable leak detection and repair" }
-    ]
+  moving: [
+    { name: "Fast Movers SJ", description: "Quick and reliable moving services", location: "Saint John" },
+    { name: "Fast Movers Moncton", description: "Quick and reliable moving services", location: "Moncton" },
+    { name: "Fast Movers Fred", description: "Quick and reliable moving services", location: "Fredericton" }
+  ],
+  trades: [
+    { name: "Pro Trades SJ", description: "Trusted local tradespeople", location: "Saint John" },
+    { name: "Pro Trades Moncton", description: "Trusted local tradespeople", location: "Moncton" },
+    { name: "Pro Trades Fred", description: "Trusted local tradespeople", location: "Fredericton" }
+  ],
+  lawncare: [
+    { name: "LawnPro SJ", description: "Expert lawn care service", location: "Saint John" },
+    { name: "LawnPro Moncton", description: "Expert lawn care service", location: "Moncton" },
+    { name: "LawnPro Fred", description: "Expert lawn care service", location: "Fredericton" }
+  ],
+  cleaning: [
+    { name: "Clean Crew SJ", description: "Top-notch cleaning for homes and offices", location: "Saint John" },
+    { name: "Clean Crew Moncton", description: "Top-notch cleaning for homes and offices", location: "Moncton" },
+    { name: "Clean Crew Fred", description: "Top-notch cleaning for homes and offices", location: "Fredericton" }
+  ],
+  plumbing: [
+    { name: "PlumbEasy SJ", description: "Reliable plumbing experts", location: "Saint John" },
+    { name: "PlumbEasy Moncton", description: "Reliable plumbing experts", location: "Moncton" },
+    { name: "PlumbEasy Fred", description: "Reliable plumbing experts", location: "Fredericton" }
+  ]
 };
 
-// Function to perform the search
 function searchServices() {
-    const category = document.getElementById("category").value;
-    const resultsDiv = document.getElementById("results");
-    const resultList = services[category] || [];
+  const category = document.getElementById("category").value;
+  const location = document.getElementById("location").value;
+  const resultsDiv = document.getElementById("results");
+  const resultList = services[category] || [];
 
-    // Clear previous results
-    resultsDiv.innerHTML = "";
+  // Clear previous results
+  resultsDiv.innerHTML = "";
 
-    if (resultList.length === 0) {
-        resultsDiv.innerHTML = "<p>No services available for this category.</p>";
-        return;
-    }
+  // Filter by location
+  const filteredResults = resultList.filter(service => service.location === location);
 
-    // Create a table for results
-    const table = document.createElement("table");
+  if (filteredResults.length === 0) {
+    resultsDiv.innerHTML = "<p>No services found for this category and location.</p>";
+    return;
+  }
 
-    // Create the table header as a proper DOM node
-    const tableHeader = document.createElement("thead");
-    const headerRow = document.createElement("tr");
-    const th1 = document.createElement("th");
-    th1.textContent = "Service Name";
-    const th2 = document.createElement("th");
-    th2.textContent = "Description";
-    const th3 = document.createElement("th");
-    th3.textContent = "Contact";
-    headerRow.appendChild(th1);
-    headerRow.appendChild(th2);
-    headerRow.appendChild(th3);
-    tableHeader.appendChild(headerRow);
-    
-    // Create the table body as a proper DOM node
-    const tableBody = document.createElement("tbody");
+  // Create table
+  const table = document.createElement("table");
 
-    resultList.forEach(service => {
-        const row = document.createElement("tr");
-        const cell1 = document.createElement("td");
-        cell1.textContent = service.name;
-        const cell2 = document.createElement("td");
-        cell2.textContent = service.description;
-        const cell3 = document.createElement("td");
-        const contactButton = document.createElement("button");
-        contactButton.classList.add("btn");
-        contactButton.textContent = "Contact";
-        cell3.appendChild(contactButton);
-        row.appendChild(cell1);
-        row.appendChild(cell2);
-        row.appendChild(cell3);
-        tableBody.appendChild(row);
-    });
+  // Header
+  const tableHeader = document.createElement("thead");
+  const headerRow = document.createElement("tr");
+  ["Service Name", "Description", "Location", "Contact"].forEach(text => {
+    const th = document.createElement("th");
+    th.textContent = text;
+    headerRow.appendChild(th);
+  });
+  tableHeader.appendChild(headerRow);
 
-    // Append header and body to the table
-    table.appendChild(tableHeader);
-    table.appendChild(tableBody);
-    resultsDiv.appendChild(table);
+  // Body
+  const tableBody = document.createElement("tbody");
+  filteredResults.forEach(service => {
+    const row = document.createElement("tr");
+
+    const cell1 = document.createElement("td");
+    cell1.textContent = service.name;
+
+    const cell2 = document.createElement("td");
+    cell2.textContent = service.description;
+
+    const cell3 = document.createElement("td");
+    cell3.textContent = service.location;
+
+    const cell4 = document.createElement("td");
+    const contactBtn = document.createElement("button");
+    contactBtn.classList.add("btn");
+    contactBtn.textContent = "Contact";
+    cell4.appendChild(contactBtn);
+
+    row.appendChild(cell1);
+    row.appendChild(cell2);
+    row.appendChild(cell3);
+    row.appendChild(cell4);
+    tableBody.appendChild(row);
+  });
+
+  table.appendChild(tableHeader);
+  table.appendChild(tableBody);
+  resultsDiv.appendChild(table);
 }
+
+// ✅ Wait until DOM is ready to attach click handler
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("search-btn").addEventListener("click", searchServices);
+});

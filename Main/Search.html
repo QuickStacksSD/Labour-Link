@@ -2,23 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Services - LablourLink</title>
-    <link rel="stylesheet" href="searchStyles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Services - LabourLink</title>
+    <link rel="stylesheet" href="searchStyles.css" />
 </head>
 
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <h1>LablourLink</h1>
+                <h1>Labour-Link</h1>
                 <p>Connecting you with trusted service providers</p>
             </div>
             <nav>
                 <ul>
                     <li><a href="https://quickstackssd.github.io/Labour-Link/Main/index.html">Home</a></li>
-                    <li><a href="https://quickstackssd.github.io/Labour-Link/Main/search.html">Search Services</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
@@ -37,12 +36,18 @@
                     <option value="cleaning">Cleaning</option>
                     <option value="plumbing">Plumbing</option>
                 </select>
-                <button type="button" class="btn" onclick="searchServices()">Search</button>
+
+                <label for="location">Select Location:</label>
+                <select id="location" name="location">
+                    <option value="Saint John">Saint John</option>
+                    <option value="Moncton">Moncton</option>
+                    <option value="Fredericton">Fredericton</option>
+                </select>
+
+                <button type="button" class="btn" id="search-btn">Search</button>
             </form>
 
-<h2>Results</h2>
-
-
+            <h2>Results</h2>
             <div id="results" class="results-section">
                 <!-- Dynamic results will appear here -->
             </div>
@@ -51,10 +56,11 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 LablourLink - All rights reserved</p>
+            <p>&copy; 2025 LabourLink - All rights reserved</p>
         </div>
     </footer>
 
+    <!-- ✅ Script at the end -->
     <script src="Search.js"></script>
 </body>
 
