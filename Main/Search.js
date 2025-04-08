@@ -73,7 +73,7 @@ function searchServices() {
     const cell4 = document.createElement("td");
     const contactBtn = document.createElement("button");
     contactBtn.classList.add("btn");
-    contactBtn.textContent = "Contact";
+    contactBtn.textContent = "Go!";
     cell4.appendChild(contactBtn);
 
     row.appendChild(cell1);
